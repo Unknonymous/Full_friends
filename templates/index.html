@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='styles.css') }}">
+
+    <title>Full Friends</title>
+</head>
+<body>
+    <div id = 'wrapper'>
+        <table id = 'friend'>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Friend Since</th>
+                <th> </th>
+            </tr>
+            {% for friend in myFriends %}
+                <tr>
+                    <td>{{friend['name']}}</td>
+                    <td>{{friend['age']}}</td>
+                    <td>{{friend['since']}}</td>
+                    <td>{{friend['year']}}</td>
+                </tr>
+                {% endfor %}
+        </table><!--closes friendz-->
+
+        <!-- show confirmation flash when friends are added -->
+        <div id = 'flasher'>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class = flashes>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div><!--closes flasher -->
+
+        <form id='inpform' action="/addfriend" method="POST">
+            First Name: <input type='text' name="firstname">
+            Last Name: <input type='text' name="lastname">
+            Age: <input type='text' name="age">
+            <input type='submit' text='Submit'>
+        </form>
+    </div><!--closes wrapper-->
+</body>
+</html>

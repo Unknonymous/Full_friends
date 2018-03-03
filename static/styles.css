@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* border: solid 1px red; */
+}
+body{
+    background-color: darkslateblue;
+}
+#wrapper{
+    background-color: black;
+    width: 1024px;
+    margin: auto;
+}
+#friend{
+    text-align: center;
+    color: white;
+    width: 768px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-left: auto;
+    border: solid 1px red;
+}
+#inpform{
+    color: limegreen;
+    font-weight: bold;
+    width: 265px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+#flasher{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+/* Could have done a lot more with css to stylize this page but moved on due to time constraints. */
